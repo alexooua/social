@@ -1,0 +1,23 @@
+.header {
+    grid-area: h;
+    display: grid;
+    grid-template-columns:auto auto;
+    background-color: #79ffb5;
+    border-radius: 0px 0px 6px 6px;
+}
+
+.header img {
+width: 50px;
+    height: 50px
+;
+}
+
+.label {
+
+}
+.label span{
+    color: #ff8d0a;
+}
+.logo{
+    align-self: center;
+}
