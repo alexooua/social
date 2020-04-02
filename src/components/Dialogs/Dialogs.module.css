@@ -13,8 +13,8 @@
 
 }
 
-.dialogsItems .active{
-    color: #427bea;
+.dialogsItems a.activeLink{
+    color: #0000ff;
 }
 
 .messages {
@@ -25,4 +25,13 @@
 .message {
     padding: 10px;
     color: #3e3d3f;
+}
+
+.dialog  a{
+    color: black;
+    text-decoration: none
+
+}
+.dialog  a:hover{
+    text-shadow: 1px 1px 2px black, 0 0 1px black;
 }
