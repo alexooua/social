@@ -1,37 +1,24 @@
 import React from "react";
 import s from './Dialogs.module.css';
-import {NavLink} from "react-router-dom";
+import DialogItem from "./DialogsItem/DialogsItem";
+import Message from "./Message/Massage";
 
-const Dialogs = (props) => {
+
+ const Dialogs = (props) => {
+     let dialogs = props.dialogsData.dialogsName.map((d,i) =>
+         <DialogItem key={i} name={d.name} id={d.id}/>)
+
+     let massagesElements = props.dialogsData.messages.map(
+         (m ,i)=> <Message key={i} id={m.id} message={m.message}/>)
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <div className={s.dialog + ' ' + s.active}>
-                    <NavLink to="/dialogs/1" activeClassName={s.activeLink}>Dima</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/dialogs/2" activeClassName={s.activeLink}>Andrey</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/dialogs/3" activeClassName={s.activeLink}>Sveta</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/dialogs/4" activeClassName={s.activeLink}>Sasha</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/dialogs/5" activeClassName={s.activeLink}>Viktor</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to="/dialogs/6" activeClassName={s.activeLink}>Valera</NavLink>
-                </div>
+                {dialogs}
             </div>
-             <div className={s.messages}>
-                 <div className={s.message}>HI!</div>
-                 <div className={s.message}>How are you?</div>
-                 <div className={s.message}>I am fine and you.</div>
-                 <div className={s.message}>Fine and Cool!!!</div>
-
-             </div>
+            <div className={s.messages}>
+                {massagesElements}
+            </div>
         </div>
 
     )
