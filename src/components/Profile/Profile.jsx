@@ -8,7 +8,10 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
         <div>
             <ProfileInfo/>
 
-            <MyPosts posts={props.posts} />
+            <MyPosts posts={props.profilePage.posts}
+                     newPostText={props.profilePage.newPostText}
+                     dispatch={props.dispatch}
+            />
         </div>
     )
 }

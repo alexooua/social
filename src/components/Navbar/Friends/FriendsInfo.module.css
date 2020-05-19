@@ -1,0 +1,14 @@
+.item {
+    color: crimson;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.item img {
+    width: 50px;
+}
+
+.fiendName {
+    display: grid;
+    justify-items: center;
+}

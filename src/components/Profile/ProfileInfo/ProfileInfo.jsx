@@ -5,7 +5,7 @@ const ProfileInfo = () => {
     return (
 
         <div>
-            <div className={s.screem}>
+            <div className={s.screen}>
                 <img
                     src="https://fartux.ru/wp-content/uploads/2018/03/fartux1055b_large-880x176.jpg"
                     alt=""/>

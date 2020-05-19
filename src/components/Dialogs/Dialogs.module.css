@@ -13,7 +13,14 @@
 
 }
 
-.dialogsItems a.activeLink{
+.avaDialogs {
+    width: 20px;
+    margin-right: 5px;
+
+
+}
+
+.dialogsItems a.activeLink {
     color: #0000ff;
 }
 
@@ -27,11 +34,18 @@
     color: #3e3d3f;
 }
 
-.dialog  a{
+.message > img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+
+.dialog a {
     color: black;
     text-decoration: none
 
 }
-.dialog  a:hover{
+
+.dialog a:hover {
     text-shadow: 1px 1px 2px black, 0 0 1px black;
 }

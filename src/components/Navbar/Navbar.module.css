@@ -18,3 +18,11 @@
 .item a.activeLink{
     color: #0000ff;
 }
+.friendsItem{
+    display: grid;
+
+}
+.friendsMy{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
