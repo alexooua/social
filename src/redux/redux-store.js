@@ -4,12 +4,12 @@ import {dialogsReducer} from "./dialogs-reducer";
 import {sidebarReducer} from "./sidebar-reducer";
 
 let reducer=combineReducers({
-    //profilePage:profileReducer,
-    profileReducer,
-    //dialogsPage:dialogsReducer
-    dialogsReducer,
-    //sidebar:sidebarReducer
-    sidebarReducer
+    profilePage:profileReducer,
+    // profileReducer,
+    dialogsPage:dialogsReducer,
+    // dialogsReducer,
+    sidebar:sidebarReducer
+    // sidebarReducer
 })
 
 let store =createStore(reducer)
