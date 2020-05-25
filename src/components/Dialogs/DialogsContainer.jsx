@@ -1,32 +1,28 @@
 import React from "react";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";// функции с редюсара создающие action
 import Dialogs from "./Dialogs";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
 
 
-function DialogsContainer() {
-    return (
-        <StoreContext.Consumer>
-            {
-                (store) => {
-                    let state = store.getState().dialogsPage
+//берём данные из state и закидываем в  пропс
+let mapStateToProps=(state)=>{
+    return{
+        dialogsPage: state.dialogsPage
 
-                    let onSendMessageClick = () => {
-                        store.dispatch(sendMessageCreator())
-                    }
-                    let onNewMessageChange = (body) => {
 
-                        store.dispatch(updateNewMessageBodyCreator(body))
-                    }
-                    return <Dialogs
-                        updateNewMessageBody={onNewMessageChange}
-                        sendMessage={onSendMessageClick}
-                        dialogsPage={state}
-                    />
-                }
-            }
-        </StoreContext.Consumer>
-    )
+    }
 }
-
+//Передаём колбеки (они внутри себя диспачется сответсвенно и название)
+let mapDispatchToProps=(dispatch)=>{
+    return{
+        updateNewMessageBody: ()=>{
+            dispatch(sendMessageCreator())
+        },
+        sendMessage: (body)=>{
+            dispatch(updateNewMessageBodyCreator(body))
+        }
+    }
+}
+//Вызываем connect функцыю два раза 1 передаём mapStateToProps,mapDispatchToProps вторым презентационную коспоненту Dialogs
+const DialogsContainer=connect(mapStateToProps,mapDispatchToProps)(Dialogs)
 export default DialogsContainer
