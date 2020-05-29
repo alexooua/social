@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cosial-network/static/css/main.a4e3f3fe.chunk.css",
+    "main.js": "/cosial-network/static/js/main.829a0a1b.chunk.js",
+    "main.js.map": "/cosial-network/static/js/main.829a0a1b.chunk.js.map",
+    "runtime-main.js": "/cosial-network/static/js/runtime-main.d71a1334.js",
+    "runtime-main.js.map": "/cosial-network/static/js/runtime-main.d71a1334.js.map",
+    "static/js/2.18c7c3c9.chunk.js": "/cosial-network/static/js/2.18c7c3c9.chunk.js",
+    "static/js/2.18c7c3c9.chunk.js.map": "/cosial-network/static/js/2.18c7c3c9.chunk.js.map",
+    "index.html": "/cosial-network/index.html",
+    "precache-manifest.08972fdcf1ab2386a14a733821455775.js": "/cosial-network/precache-manifest.08972fdcf1ab2386a14a733821455775.js",
+    "service-worker.js": "/cosial-network/service-worker.js",
+    "static/css/main.a4e3f3fe.chunk.css.map": "/cosial-network/static/css/main.a4e3f3fe.chunk.css.map",
+    "static/js/2.18c7c3c9.chunk.js.LICENSE.txt": "/cosial-network/static/js/2.18c7c3c9.chunk.js.LICENSE.txt",
+    "static/media/avatarUser.png": "/cosial-network/static/media/avatarUser.b9b0490a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d71a1334.js",
+    "static/js/2.18c7c3c9.chunk.js",
+    "static/css/main.a4e3f3fe.chunk.css",
+    "static/js/main.829a0a1b.chunk.js"
+  ]
+}
