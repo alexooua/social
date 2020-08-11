@@ -55,7 +55,7 @@ export const usersReducer = (state = initialState, action) => {
 }
 
 // блок функций (action creator) для пропроса в диспачи методов и свойств
-//функции колбеки экшен криэйторы (action creat) для правильной передаци данных из места их вызова в редьюсеры
+//функции колбеки экшен криэйторы (action creat) для правильной передачи данных из места их вызова в редьюсеры
 export const followAC = (userId) => ({type: FOLLOW, userId})
 export const unfollowAC = (userId) => ({type: UNFOLLOW, userId})
 
