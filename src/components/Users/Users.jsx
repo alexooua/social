@@ -18,8 +18,14 @@ componentDidMount() {
 }
 
     render() {
-
-        return <div>
+         return <div>
+             <div>
+                 <span>1</span>
+                 <span className={s.selectedPage}>2</span>
+                 <span>3</span>
+                 <span>4</span>
+                 <span>5</span>
+             </div>
              {
                 this.props.users.map(u => <div key={u.id}>
                 <span>
@@ -66,7 +72,8 @@ componentDidMount() {
 let mapStateToProps = (state) => {
     return {
         // в пропсы попадает свойство что мы напишем
-        users: state.usersPage.users
+        users: state.usersPage.users,
+        pageSize: state.usersPage.pageSize
     }
 }
 let mapDispatchToProps = (dispatch) => {

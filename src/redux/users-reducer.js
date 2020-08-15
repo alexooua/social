@@ -11,6 +11,8 @@ let initialState = {
   // {id: 2,photoUrl:"https://materiell.com/wp-content/uploads/2015/03/john-full.png", followed: true, fullName: "Ira", status: "I am a boss", location: {city: 'Moskva', country: "Russia"}},
   // {id: 3,photoUrl:"https://materiell.com/wp-content/uploads/2015/03/john-full.png", followed: false, fullName: "Max", status: "I am a boss", location: {city: 'Minsk', country: "Belarus"}},
  ],
+ pageSize:5,
+ totalUsersCount:0
 
 }
 //блок по обработке экшенов (action) и пиходящих с ними данных
