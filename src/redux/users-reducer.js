@@ -3,6 +3,7 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 //инициализация первичных данных для state
 
 let initialState = {
@@ -11,9 +12,9 @@ let initialState = {
   // {id: 2,photoUrl:"https://materiell.com/wp-content/uploads/2015/03/john-full.png", followed: true, fullName: "Ira", status: "I am a boss", location: {city: 'Moskva', country: "Russia"}},
   // {id: 3,photoUrl:"https://materiell.com/wp-content/uploads/2015/03/john-full.png", followed: false, fullName: "Max", status: "I am a boss", location: {city: 'Minsk', country: "Belarus"}},
  ],
- pageSize:5,
- totalUsersCount:0
-
+ pageSize: 5,
+ totalUsersCount: 0,
+ currentPage: 2,
 }
 //блок по обработке экшенов (action) и пиходящих с ними данных
 export const usersReducer = (state = initialState, action) => {
@@ -47,7 +48,11 @@ export const usersReducer = (state = initialState, action) => {
   case SET_USERS:
    return {
     ...state,
-    users: [...state.users,...action.users]
+    users:action.users
+   }
+   case SET_CURRENT_PAGE:
+   return {
+    ...state,currentPage: action.currentPage
    }
 
   default:
@@ -63,6 +68,10 @@ export const unfollowAC = (userId) => ({type: UNFOLLOW, userId})
 
 export const setUsersAC = (users) =>
     ({type: SET_USERS,users})
+export const setCurrentPageAC = (currentPage) =>
+    ({type: SET_CURRENT_PAGE,currentPage})
+export const setTotalUsersCountAC = (TotalUsersCount) =>
+    ({type: SET_CURRENT_PAGE,TotalUsersCount})
 
 
 export default usersReducer
