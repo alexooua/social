@@ -9,7 +9,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
  import {connect} from "react-redux";
-import Users from "./components/Users/Users";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 const App = (props) => {
@@ -28,7 +28,7 @@ const App = (props) => {
                            render={() => <Profile
                             />}/>
                     <Route path='/users'
-                           render={() => <Users
+                           render={() => <UsersContainer
                                // store={props.store}
                            />}/>
                     <Route path='/news' render={() => <News/>}/>
