@@ -15,7 +15,7 @@ let initialState = {
   // {id: 2,photoUrl:"https://materiell.com/wp-content/uploads/2015/03/john-full.png", followed: true, fullName: "Ira", status: "I am a boss", location: {city: 'Moskva', country: "Russia"}},
   // {id: 3,photoUrl:"https://materiell.com/wp-content/uploads/2015/03/john-full.png", followed: false, fullName: "Max", status: "I am a boss", location: {city: 'Minsk', country: "Belarus"}},
  ],
- pageSize: 50,
+ pageSize: 5,
  totalUsersCount: 0,
  currentPage: 2,
  isFetching: true,
@@ -77,13 +77,13 @@ export const usersReducer = (state = initialState, action) => {
 
 // блок функций (action creator) для пропроса в диспачи методов и свойств
 //функции колбеки экшен криэйторы (action creat) для правильной передачи данных из места их вызова в редьюсеры
-export const followAC = (userId) => ({type: FOLLOW, userId})
-export const unfollowAC = (userId) => ({type: UNFOLLOW, userId})
+export const follow  = (userId) => ({type: FOLLOW, userId})
+export const unfollow  = (userId) => ({type: UNFOLLOW, userId})
 
-export const setUsersAC = (users) => ({type: SET_USERS, users})
-export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
-export const setTotalUsersCountAC = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount})
-export const toggleIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
+export const setUsers  = (users) => ({type: SET_USERS, users})
+export const setCurrentPage  = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
+export const setTotalUsersCount  = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount})
+export const toggleIsFetching  = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
 
 export default usersReducer

@@ -1,16 +1,16 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    followAC,
-    setCurrentPageAC,
-    setTotalUsersCountAC,
-    setUsersAC,
-    toggleIsFetchingAC,
-    unfollowAC
+    follow,
+    setCurrentPage,
+    setTotalUsersCount,
+    setUsers,
+    toggleIsFetching,
+    unfollow
 } from "../../redux/users-reducer";
 import * as axios from "axios";
 import Users from "./Users";
-import preloader from "../../assets/images/preloader.svg"
+import Preloader from "../common/preloader/preloader";
 
 class UsersContainer extends React.Component {
 
@@ -43,9 +43,7 @@ class UsersContainer extends React.Component {
 
         return <>
             {this.props.isFetching ?
-                <div style={{border:'solid red'}}>
-                    <img src={preloader}/>
-                </div> : null}
+                <Preloader/> : null}
             <Users totalUsersCount={this.props.totalUsersCount}
                    pageSize={this.props.pageSize}
                    currentPage={this.props.currentPage}
@@ -72,30 +70,9 @@ let mapStateToProps = (state) => {
         isFetching: state.usersPage.isFetching,
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {
-        // в пропсы попадает свойство что мы напишем
 
-        follow: (userId) => {
-            dispatch(followAC(userId))
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId))
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setTotalUsersCountAC(totalCount))
-        },
-        toggleIsFetching: (isFetching) => {
-            dispatch(toggleIsFetchingAC(isFetching))
-        }
+export default connect(mapStateToProps,
+    {// в пропсы попадает свойство что мы напишем
+        follow,unfollow,setUsers,setCurrentPage,setTotalUsersCount,toggleIsFetching ,
     }
-}
-//Вызываем connect функцыю два раза 1 передаём mapStateToProps,mapDispatchToProps вторым презентационную коспоненту Dialogs
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+    )(UsersContainer);
